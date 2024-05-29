@@ -1,7 +1,6 @@
 import { google } from "googleapis";
 import fs from "fs";
 import path from "path";
-import axios from "axios";
 import * as dotenv from "dotenv";
 dotenv.config();
 

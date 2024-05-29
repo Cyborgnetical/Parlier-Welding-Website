@@ -1,0 +1,28 @@
+---
+    import Layout from "../../layouts/Layout.astro"
+    import data from "../../../data/projects/projects.json"
+    import "./slug.css"
+    export async function getStaticPaths(){
+        return data.map(({slug,name,dateAdded,text,images})=>{
+            return {
+                params:{slug},
+                props:{name,dateAdded,text,images}
+            }
+        })
+    }
+    const { name, dateAdded, text, images } = Astro.props
+---
+<Layout title=`Welding Projects`>
+    <div id="main-wrapper">
+        <div id="title">
+            <h1>{name}</h1>
+            <hr>
+            <h3>Date Added: {dateAdded}</h3>
+        </div>
+        <main id="main"></main>
+    </div>
+</Layout>
+<script lang="js" define:vars={{text}}>
+    document.getElementById("main").innerHTML = text
+</script>
+

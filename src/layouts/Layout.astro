@@ -1,6 +1,7 @@
 ---
 
 import { Header } from '../components/Header.tsx';
+import { ViewTransitions } from 'astro:transitions';
 import "./styles.css"
 
 interface Props {
@@ -16,6 +17,7 @@ const { title="" } = Astro.props
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{title}</title>
+	<ViewTransitions />
 </head>
 <body>
 	<Header page={title} client:load/>
