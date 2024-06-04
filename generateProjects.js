@@ -19,6 +19,24 @@ function getFileName(file = "") {
     return file.split(".").slice(0, -1).join(".");
 }
 let lineee = 0;
+function isImage(element) {
+    // Check if the element is a table (which images are represented as)
+    if (!element.table) return false;
+
+    // Iterate through rows in the table
+    for (let row of element.table.rows) {
+        // Iterate through cells in the row
+        for (let cell of row.cells) {
+            // Check if the cell contains an image
+            if (cell.image) {
+                return true; // Found an image
+            }
+        }
+    }
+
+    return false; // No image found
+}
+
 async function getDocData(id=""){
     let txt = ""
     await docs.documents.get({
@@ -71,12 +89,13 @@ async function getDocData(id=""){
 async function fetchFiles(token = "") {
     // List files in the public folder
     const response = await drive.files.list({
-        q: `'${process.env.GOOGLE_FOLDER_ID}' in parents`,
+        q: `'${process.env.GOOLGE_FOLDER_ID_PROJECTS}' in parents`,
         pageSize: 1000,
         //pageToken: token,
         key: process.env.GOOGLE_API_KEY,
         fields: 'nextPageToken, files(id, name, createdTime)'
     });
+    // if folder exists
     if(response.data.files){
         let folders = response.data.files
         for(let i=0;i<folders.length;i++){
@@ -86,6 +105,8 @@ async function fetchFiles(token = "") {
                 slug:folder.id,
                 name:folder.name,
                 dateAdded:date.getMonth()+"-"+date.getDay()+"-"+date.getFullYear(),
+                desc:"",
+                displayURL:"",
                 text:"",
                 images:[]
             }
@@ -96,10 +117,20 @@ async function fetchFiles(token = "") {
             })
             for(let o=0;o<folderData.data.files.length;o++){
                 let folderfile = folderData.data.files[o]
+                // if it doc
                 if(folderfile.mimeType.startsWith("application/vnd.google-apps.document")){
-                    data.text = await getDocData(folderfile.id)
+                    if(folderfile.name == "Post"){
+                        data.text = await getDocData(folderfile.id)
+                    }else if(folderfile.name == "Desc"){
+                        data.desc = await getDocData(folderfile.id)
+                    }
+                }else if(folderfile.mimeType.startsWith("image/") && getFileName(folderfile.name).toLowerCase() == "display" ){
+                    data.displayURL = `https://lh3.googleusercontent.com/d/${folderfile.id}`
+                }else if(folderfile.mimeType.startsWith("image/")){
+                    data.images.push(`https://lh3.googleusercontent.com/d/${folderfile.id}`)
                 }
             }
+
             //console.log(images.data.files)
             projectJSON.push(data)
         }
@@ -108,7 +139,7 @@ async function fetchFiles(token = "") {
 
 await fetchFiles()
 
-await fs.writeFile(path.join(process.cwd(),"data","projects","projects.json"),JSON.stringify(projectJSON,null,4),(err)=>{
+await fs.writeFileSync(path.join(process.cwd(),"data","projects","projects.json"),JSON.stringify(projectJSON,null,4),(err)=>{
     if(err){
         console.log("Faliure to write file")
         console.log("error:\n--------------------------------\n"+err)
@@ -116,4 +147,5 @@ await fs.writeFile(path.join(process.cwd(),"data","projects","projects.json"),JS
         console.log("writing file successful")
     }
 })
+
 console.log("End of execution")

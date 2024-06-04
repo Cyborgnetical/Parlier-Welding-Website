@@ -5,10 +5,12 @@
 ---
 <Layout title="Projects">
     <div id="projects">
-        aa
     </div>
 </Layout>
 <script is:inline define:vars={{data}}>
+    let projects = document.getElementById("projects")
+    //projects.style.gridAutoRows = `repeat(${data.length/5},1fr)`
+
     let rando = 0
     //random Number I thought of
     //good enough random seeded number for me
@@ -18,7 +20,7 @@
         if(!randoInt<addingRando.length){
             randoInt = 0
         }else{
-            randInt++
+            randoInt++
         }
         return(rando[randoInt])
     }
@@ -26,13 +28,24 @@
         let project = document.createElement("a");
         project.href = "Projects/"+data[i].slug
         project.className = "project"
-        if(data[i].images[0]){
+        project.style.width = "200px"
+
+
+        if(data[i].displayURL != ""){
+            let img = document.createElement("img")
+            img.src = data[i].displayURL
+            let ratio = img.width/img.height
             // if the width is greater, set height to 200px
-            // if the height is greater, set width to 200px
-            // This is to bring different rectanges
-        }else{
-            project.style.width = "200px"
+            if(img.width > img.height){
+                img.style.height = "200px";
+            }else{
+                img.style.width = "200px";
+            }
+            project.style.width = `${200*ratio}px`
+            project.appendChild(img)
         }
+
+
             let title = document.createElement("h3");
             title.innerText = data[i].name;
 
@@ -40,7 +53,11 @@
             subtitle.innerText = data[i].dateAdded
 
             let desc = document.createElement("p");
-            desc.innerText = "In publishing and graphic design, Lorem ipsum (/ˌlɔː.rəm ˈɪp.səm/) is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available. It is also used to temporarily replace text in a process called greeking, which allows designers to consider the form of a webpage or publication, without the meaning of the text influencing the design. - Wikipedia"
+            if(data[i].desc != ""){
+                desc.innerHTML = data[i].desc
+            }else{
+                desc.innerHTML = "In publishing and graphic design, Lorem ipsum (/ˌlɔː.rəm ˈɪp.səm/) is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available. It is also used to temporarily replace text in a process called greeking, which allows designers to consider the form of a webpage or publication, without the meaning of the text influencing the design. - Wikipedia"
+            }
 
         project.appendChild(title)
         project.appendChild(subtitle)

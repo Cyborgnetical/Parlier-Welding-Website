@@ -2,34 +2,87 @@
 
 import Image from "astro/components/Image.astro";
 import Layout from "../layouts/Layout.astro";
-
-
 import main from "./main.js"
 ---
 
 <Layout title="Home">
     <div id="Main-Display">
-        <h1>
-            <span style="overflow-x: hidden;">Parlier</span>
-            <span style="color:#80b9ff;" id="slideInLeft">Welding Club</span>
-        </h1>
+
+        <div>
+            <h1>
+                <span style="overflow-x: hidden;">Parlier</span>
+                <span style="color:#80b9ff;" id="slideInLeft">Welding Club</span>
+            </h1>
+            <a href="/Parlier-Welding-Website/Projects" id="btn-wrapper"><button>Check out our work</button> </a>
+        </div>
+        <!-- <button>Check out our work</button> -->
+        <p><b>
+            Welding stuff and more text
+        </b></p>
+        <svg width="200" height="200" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" id="triangle" style="transform: scaleX(-1); left:0px">
+            <path d="M100 100V0L0 100H100Z" fill="var(--backgroundColor)"/>
+        </svg>
+        <svg width="200" height="200" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" id="triangle" style=" right:0px">
+            <path d="M100 100V0L0 100H100Z" fill="var(--backgroundColor)"/>
+        </svg>
     </div>
 </Layout>
-<style is:global>
+<style>
+    #triangle{
+        position:absolute;
+        bottom:0px;
+
+        margin:0px;
+    }
+    #left{
+        transform: scaleX(-1);
+        left:0px
+    }
+    #right{
+        right:0px;
+    }
+    h1{
+        display:flex;
+        font-size:36px;
+        column-gap:5px;
+    }
+    h1 span{
+        padding:10px;
+    }
+    h1 span:nth-child(1){
+        border-top: 1px solid white;
+        border-left: 1px solid white;
+    }
+    h1 span:nth-child(2){
+        border-bottom: 1px solid white;
+        border-right: 1px solid white;
+    }
     img{
         width: 100vw;
         height: auto;
     }
     #Main-Display{
+        position:relative;
+
         display: grid;
         align-items: center;
         justify-items: center;
+        grid-template-columns: 1fr 1fr;
 
-        height: 600px;
+        height: 500px;
 
 
-        background-image: url("https://weldernation.com/cdn/shop/files/WN_BeanieCollection_Homepage_1800x1000_caf1ceda-8640-402e-add0-38ffcd647294_3000x.jpg?v=1694449280");
-        object-fit: cover;
+        background-image: url("https://lh3.googleusercontent.com/d/1FOLup-5KkMDrlTATgjSVyKR1h4vu195f");
+        background-repeat: no-repeat;
+        background-position: center center;
+        object-fit: cover
+    }
+    #Main-Display p{
+        color: azure;
+        font-size:15px;
+    }
+    button{
+        margin-block:20px;
     }
     #slideInLeft{
         overflow-x: hidden;
@@ -48,7 +101,6 @@ import main from "./main.js"
 
         position: absolute;
         right:0px;
-
         animation: fadeAway 1s;
 
     }

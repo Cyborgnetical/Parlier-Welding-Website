@@ -3,6 +3,8 @@
         "slug": "1No1PXOF6A88TofuMBpcGKGm3VEWG6hPV",
         "name": "Random",
         "dateAdded": "4-2-2024",
+        "desc": "",
+        "displayURL": "",
         "text": "",
         "images": []
     },
@@ -10,14 +12,18 @@
         "slug": "10XHgqaww72QZE6IERnNf4RlFTUVT3KIX",
         "name": "Project 2",
         "dateAdded": "4-2-2024",
-        "text": " <p style=\"\">Project 2\n</p> ",
+        "desc": "",
+        "displayURL": "",
+        "text": "",
         "images": []
     },
     {
         "slug": "1vZ-HBwff_sAiBSfDGxAmYx9O7aJ3mMiW",
         "name": "Project 1",
         "dateAdded": "4-1-2024",
-        "text": " \n  <p style=\"\">Project 1\n</p>  \n  \n  <p style=\"font-size:10.5px; font-family:\"Open Sans\"\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultrices quam eget est interdum hendrerit. Morbi erat ante, gravida ut porttitor sit amet, suscipit quis odio. Praesent eget malesuada ante. Aliquam ullamcorper metus sed turpis blandit, vitae pharetra nisl lacinia. Etiam ipsum ante, tempus at turpis ac, placerat hendrerit magna. Morbi a eros sed nulla sodales aliquam. Nullam rutrum justo lorem, sed blandit magna hendrerit ac. Ut congue laoreet pellentesque. Integer rhoncus, velit vitae consectetur hendrerit, augue erat laoreet ligula, vel bibendum magna ex ac neque. Aliquam congue est at ante eleifend accumsan. Quisque egestas venenatis lacus in porttitor. Cras iaculis metus quis neque dictum, quis sagittis libero elementum. Proin feugiat a velit nec congue.\n</p>  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  <b><p style=\"font-size:14.5px; font-family:\"Inter\"\">Phasellus semper maximus pretium. Vivamus placerat eros non elit posuere sollicitudin. Aenean blandit ante est, et suscipit ligula porttitor eget. Nunc dictum luctus felis, id volutpat nibh congue id. Aenean maximus metus a erat consequat, eu rutrum elit ullamcorper. Vestibulum id vulputate sem, non varius odio. Nullam </p></b>  <i><p style=\"font-size:9.5px; font-family:\"Lexend\"\">id turpis dignissim, facilisis ex sed, ullamcorper metus. Nunc id orci eget ex accumsan sodales quis posuere nibh. Praesent at massa ac nisl viverra ultricies vel in dolor. Nullam lacinia lacus ut leo cursus, et ullamcorper tortor fermentum.\n</p></i>  \n ",
+        "desc": " <p style=\"\">This is the example of a welding project\n</p> ",
+        "displayURL": "https://lh3.googleusercontent.com/d/1hX0sTKNxhq4SbW9DUL15KfYq4Jd2UEbn",
+        "text": " \n  \n  <p style=\"\">Project 1\n</p>  \n  \n  <p style=\"font-size:10.5px; font-family:\"Open Sans\"\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultrices quam eget est interdum hendrerit. Morbi erat ante, gravida ut porttitor sit amet, suscipit quis odio. Praesent eget malesuada ante. Aliquam ullamcorper metus sed turpis blandit, vitae pharetra nisl lacinia. Etiam ipsum ante, tempus at turpis ac, placerat hendrerit magna. Morbi a eros sed nulla sodales aliquam. Nullam rutrum justo lorem, sed blandit magna hendrerit ac. Ut congue laoreet pellentesque. Integer rhoncus, velit vitae consectetur hendrerit, augue erat laoreet ligula, vel bibendum magna ex ac neque. Aliquam congue est at ante eleifend accumsan. Quisque egestas venenatis lacus in porttitor. Cras iaculis metus quis neque dictum, quis sagittis libero elementum. Proin feugiat a velit nec congue.\n</p>  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  <b><p style=\"font-size:14.5px; font-family:\"Inter\"\">Phasellus semper maximus pretium. Vivamus placerat eros non elit posuere sollicitudin. Aenean blandit ante est, et suscipit ligula porttitor eget. Nunc dictum luctus felis, id volutpat nibh congue id. Aenean maximus metus a erat consequat, eu rutrum elit ullamcorper. Vestibulum id vulputate sem, non varius odio. Nullam </p></b>  <i><p style=\"font-size:9.5px; font-family:\"Lexend\"\">id turpis dignissim, facilisis ex sed, ullamcorper metus. Nunc id orci eget ex accumsan sodales quis posuere nibh. Praesent at massa ac nisl viverra ultricies vel in dolor. Nullam lacinia lacus ut leo cursus, et ullamcorper tortor fermentum.\n</p></i>  \n ",
         "images": []
     }
 ]

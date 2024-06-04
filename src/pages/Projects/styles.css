@@ -1,13 +1,30 @@
-.project{
+#projects{
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    align-items: center;
+    justify-items: center;
+}
+
+.project{
+    display: inline-grid;
 
     border: 1px solid white;
     border-radius: 10px;
-    background-color: rgba(36.33760937330989, 167.88703417231812, 65.1662236216307, 0.5);
+    /*background-color: rgba(36.33760937330989, 167.88703417231812, 65.1662236216307, 0.5);*/
 
     padding:10px;
+    margin:5px;
+    text-decoration: none;
     color: white;
+
+    transition: 250ms;
+}
+.project:hover{
+    box-shadow: 0 0 5px 5px rgb(140, 182, 255);
 }
 .project > *{
     margin: 2px;
+}
+.project > p{
+    text-decoration: underline;
 }
