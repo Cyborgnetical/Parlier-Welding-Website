@@ -1,0 +1,73 @@
+---
+    import "./Footer.less"
+---
+
+
+<footer>
+
+    <div id="swiggles">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div id="Footer-Content">
+        <h1>Parlier Welding</h1>
+        <hr>
+        <div id="Footer-MoreInfo">
+            <div>
+                <h2>Socials</h2>
+                <ul>
+                    <a>Youtube</a>
+                    <a>Instagram</a>
+                    <a>Another Social Media</a>
+                </ul>
+            </div>
+            <div>
+                <h2>Contacts</h2>
+                <ul>
+                    <a>Emergenct: 911</a>
+                    <a>Burger King: (559) 646-0812</a>
+                    <a>Little Caesars (559) 646-1400</a>
+                </ul>
+            </div>
+        </div>
+    <div>
+
+</footer>
+
+<script is:inline lang="js">
+    document.addEventListener("DOMContentLoaded",()=>{
+        console.log("again")
+        let swiggles = document.getElementById("swiggles").childNodes
+        let count = 0
+        for(let i = 0; i<swiggles.length;i++){
+            if(swiggles[i].tagName == "DIV"){
+                count++
+            }
+        }
+        let width = (((window.innerWidth/(count-1))/2) / window.innerWidth) * 100
+        document.getElementById("swiggles").style.left = `-${width}vw`
+        for(let i = 0; i<swiggles.length;i++){
+            if(swiggles[i].tagName == "DIV"){
+                swiggles[i].style.maxWidth = "0px";
+                swiggles[i].style.borderLeft = `${width}vw solid transparent`;
+                swiggles[i].style.borderRight = `${width}vw solid transparent`;
+                swiggles[i].style.borderBottom = `${width}vw solid`;
+            }
+        }
+    })
+</script>

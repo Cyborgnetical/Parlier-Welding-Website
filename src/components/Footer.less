@@ -1,0 +1,26 @@
+@color: rgb(36, 49, 70);
+
+#swiggles{
+    display: flex;
+    color:@color;
+}
+#Footer-Content{
+
+    width: 100vw;
+    height: 200px;
+
+    padding:25px;
+    box-sizing: border-box;
+
+    & > *{
+        margin:5px;
+    }
+    & > div{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        div ul{
+            display:grid;
+        }
+    }
+    background-color: @color;
+}

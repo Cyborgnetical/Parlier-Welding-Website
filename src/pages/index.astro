@@ -3,11 +3,12 @@
 import Image from "astro/components/Image.astro";
 import Layout from "../layouts/Layout.astro";
 import main from "./main.js"
+
+import "./about.less"
 ---
 
 <Layout title="Home">
     <div id="Main-Display">
-
         <div>
             <h1>
                 <span style="overflow-x: hidden;">Parlier</span>
@@ -15,7 +16,6 @@ import main from "./main.js"
             </h1>
             <a href="/Parlier-Welding-Website/Projects" id="btn-wrapper"><button>Check out our work</button> </a>
         </div>
-        <!-- <button>Check out our work</button> -->
         <p><b>
             Welding stuff and more text
         </b></p>
@@ -26,7 +26,19 @@ import main from "./main.js"
             <path d="M100 100V0L0 100H100Z" fill="var(--backgroundColor)"/>
         </svg>
     </div>
+    <div id="AboutUs">
+        <h1>What we do</h1>
+        <p class="octogon">We are a local high school club, we do Sheilded Metal Arc Welding, MIG welding, Flame Cutting, and Plasma Cutting right here in our shop. </p>
+        <div class="Horizontal-Line"></div>
+        <div id="img-display">
+            <img src="https://lh3.googleusercontent.com/d/1b5t6hYtXkfhj8dEyoTY-4Htrumr9ceKj">
+            <span class="octogon">idk</span>
+        </div>
+    </div>
 </Layout>
+<script src="./octogon.js">
+    
+</script>
 <style>
     #triangle{
         position:absolute;
@@ -41,26 +53,23 @@ import main from "./main.js"
     #right{
         right:0px;
     }
-    h1{
+    #Main-Display h1{
         display:flex;
         font-size:36px;
         column-gap:5px;
     }
-    h1 span{
+    #Main-Display h1 span{
         padding:10px;
     }
-    h1 span:nth-child(1){
+    #Main-Display h1 span:nth-child(1){
         border-top: 1px solid white;
         border-left: 1px solid white;
     }
-    h1 span:nth-child(2){
+    #Main-Display h1 span:nth-child(2){
         border-bottom: 1px solid white;
         border-right: 1px solid white;
     }
-    img{
-        width: 100vw;
-        height: auto;
-    }
+    
     #Main-Display{
         position:relative;
 

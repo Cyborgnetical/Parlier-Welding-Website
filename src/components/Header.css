@@ -1,6 +1,6 @@
 #Main-Header{
     display: grid;
-    grid-template-columns: 95vw 5vw;
+    grid-template-columns: 1fr 65px;
     grid-template-rows: 150px;
 
     overflow: hidden;

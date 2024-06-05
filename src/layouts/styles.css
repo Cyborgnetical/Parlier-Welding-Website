@@ -36,3 +36,13 @@ body{
 span{
     display: inline-block;
 }
+
+h1{
+    font-family: "Expletus Sans";
+}
+.Horizontal-Line{
+    width: 1px;
+    height: 90%;
+
+    background-color: white;
+}

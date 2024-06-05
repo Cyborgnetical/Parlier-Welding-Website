@@ -1,6 +1,7 @@
 ---
 
 import { Header } from '../components/Header.tsx';
+import Footer from "../components/Footer.astro"
 import { ViewTransitions } from 'astro:transitions';
 import "./styles.css"
 
@@ -22,5 +23,6 @@ const { title="" } = Astro.props
 <body>
 	<Header page={title} client:load transition:persist/>
 	<slot />
+	<Footer/>
 </body>
 </html>
