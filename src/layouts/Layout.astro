@@ -4,6 +4,8 @@ import { Header } from '../components/Header.tsx';
 import Footer from "../components/Footer.astro"
 import "./styles.css"
 
+import { ViewTransitions } from 'astro:transitions';
+
 interface Props {
 	title:string;
 }
@@ -17,10 +19,13 @@ const { title="" } = Astro.props
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{title}</title>
+	<ViewTransitions></ViewTransitions>
 </head>
 <body>
-	<Header page={title} client:load/>
-	<slot />
-	<Footer/>
+	<Header page={title} client:load transition:persist/>
+	<main transition:name="hero">
+		<slot />
+	</main>
+	<Footer transition:persist/>
 </body>
 </html>

@@ -1,8 +1,9 @@
 ---
-
-import Image from "astro/components/Image.astro";
 import Layout from "../layouts/Layout.astro";
-import main from "./main.js"
+import SeperationShowText from "../components/seperationShowsText/index.astro"
+
+
+
 
 import "./about.less"
 ---
@@ -14,7 +15,10 @@ import "./about.less"
                 <span style="overflow-x: hidden;">Parlier</span>
                 <span style="color:#80b9ff;" id="slideInLeft">Welding Club</span>
             </h1>
-            <a href="/Parlier-Welding-Website/Projects" id="btn-wrapper"><button>Check out our work</button> </a>
+            <a href="/Parlier-Welding-Website/Projects" id="btn-wrapper">
+                <button>Check out our work</button> 
+                <div id="blue"></div>
+            </a>
         </div>
         <p><b>
             Welding stuff and more text
@@ -26,6 +30,11 @@ import "./about.less"
             <path d="M100 100V0L0 100H100Z" fill="var(--backgroundColor)"/>
         </svg>
     </div>
+
+    <SeperationShowText title="About Us" img1="Cool-Pictures/IMG_8211 Large.jpeg" img2="Cool-Pictures/IMG_8211 Large.jpeg">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea voluptates sint perspiciatis! Repellendus praesentium cumque deleniti magnam alias, dolor consequatur ducimus officia odit reprehenderit aliquid ipsum architecto adipisci eum similique?
+    </SeperationShowText>
+
     <div id="AboutUs">
         <h1>What we do</h1>
         <p class="octogon">We are a local high school club, we do Sheilded Metal Arc Welding, MIG welding, Flame Cutting, and Plasma Cutting right here in our shop. </p>
@@ -109,7 +118,7 @@ for(let i=0;i<octogons.length;i++){
         justify-items: center;
         grid-template-columns: 1fr 1fr;
 
-        height: 500px;
+        height: 600px;
 
 
         background-image: url("https://lh3.googleusercontent.com/d/1FOLup-5KkMDrlTATgjSVyKR1h4vu195f");
@@ -123,6 +132,15 @@ for(let i=0;i<octogons.length;i++){
     }
     button{
         margin-block:20px;
+    }
+    #btn-wrapper button{
+        background: none;
+        border: none;
+
+        cursor: pointer;
+        padding: 5px;
+
+        color: azure;
     }
     #slideInLeft{
         overflow-x: hidden;

@@ -1,0 +1,32 @@
+---
+import "./style.less"
+
+interface Props {
+	title: string;
+    img1: string;
+    img2: string;
+
+}
+
+const { title, img1, img2 } = Astro.props;
+---
+
+<div id="sContainer">
+    <div id="sImg-Container" style="animation-duration: 3s; animation-name: slide-in-from-right;">
+        <img src={img1}>
+        <img src="SVGs-Cuts/slice.svg">
+    </div>
+    <div id="sText-Container">
+        <h2>{title}</h2>
+        <p>
+            <slot></slot>
+        </p>
+    </div>
+    <div id="sImg-Container" style="animation-duration: 3s; animation-name: slide-in-from-left;">
+        <img src={img2}>
+        <img src="SVGs-Cuts/slice.svg" style="transform: rotate(0.5turn);">
+    </div>
+</div>
+
+
+
